@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💰 Empréstimo Rápido Angola - Receba Hoje!</title>
+    <title>💰 Empréstimo Rápido Angola</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .hero { font-family: 'Poppins', sans-serif; }
-        .pulse-glow { animation: pulse-glow 2s infinite; }
-        @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 20px rgba(0,245,200,0.5); } 50% { box-shadow: 0 0 40px rgba(0,245,200,0.8); } }
-        input:focus { outline: none; }
-        .social-item { animation: slideIn 0.5s ease-out forwards; opacity: 0; }
-        @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; }
+        .bg-custom { background: linear-gradient(to bottom right, #0a1f1a, #000); }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; background: #333; border-radius: 3px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #00f5c8; cursor: pointer; margin-top: -7px; box-shadow: 0 0 10px #00f5c8; }
+    </style>
+</head>
+<body class="bg-custom min-h-screen">
 
-        /* Estilos para o input range */
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #00f5c8;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0,245,200,0.7);
-            margin-top: -8px; 
-        }
-        input[type=range]::-moz-range-thumb {
-            width: 20
+    <div class="bg-red-600 text-white text-center py-2 font-bold text-sm sticky top-0 z-50">
+        🔥 ÚLTIMAS VAGAS DISPONÍVEIS - EXPIRA EM: <span id="timer">02:59</span>
+    </div>
 
+    <div class="max-w-xl mx-auto px-4 py-10">
+        <div class="text-center mb-1
