@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -13,4 +12,21 @@
         .pulse-glow { animation: pulse-glow 2s infinite; }
         @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 20px rgba(0,245,200,0.5); } 50% { box-shadow: 0 0 40px rgba(0,245,200,0.8); } }
         input:focus { outline: none; }
-        .social-item { animation: slideIn
+        .social-item { animation: slideIn 0.5s ease-out forwards; opacity: 0; }
+        @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+
+        /* Estilos para o input range */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00f5c8;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0,245,200,0.7);
+            margin-top: -8px; 
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 20
+
