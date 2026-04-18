@@ -3,77 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💰 Empréstimo Rápido Angola</title>
+    <title>Protocolo Institucional de Crédito</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; }
-        .bg-custom { background: linear-gradient(to bottom right, #0a1f1a, #000); }
-        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; background: #333; border-radius: 3px; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #00f5c8; cursor: pointer; margin-top: -7px; box-shadow: 0 0 10px #00f5c8; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; scroll-behavior: smooth; }
+        .bg-armored { background: radial-gradient(circle at 50% -10%, #00f5c81a, #000); }
+        .glass-shield { background: rgba(12, 12, 12, 0.98); border: 1px solid rgba(0, 245, 200, 0.2); box-shadow: 0 0 40px rgba(0,0,0,1); }
+        
+        /* Slider de Precisão Psicológica */
+        input[type=range] { -webkit-appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-runnable-track { background: #151515; height: 12px; border-radius: 6px; border: 1px solid #222; }
+        input[type=range]::-webkit-slider-thumb { 
+            -webkit-appearance: none; height: 34px; width: 34px; border-radius: 50%; 
+            background: #00f5c8; cursor: pointer; margin-top: -12px;
+            box-shadow: 0 0 30px rgba(0, 245, 200, 0.6); border: 4px solid #000;
+        }
+
+        /* Efeito de Scanner de Identidade */
+        .scanning-beam { position: absolute; width: 100%; height: 3px; background: #00f5c8; box-shadow: 0 0 20px #00f5c8; animation: beam 2.5s infinite ease-in-out; }
+        @keyframes beam { 0%, 100% { top: 0%; opacity: 0; } 50% { top: 100%; opacity: 1; } }
+        
+        .pulse-soft { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     </style>
 </head>
-<body class="bg-custom min-h-screen">
+<body class="bg-armored min-h-screen flex items-center justify-center p-4">
 
-    <div class="bg-red-600 text-white text-center py-2 font-bold text-sm sticky top-0 z-50">
-        🔥 ÚLTIMAS VAGAS DISPONÍVEIS - EXPIRA EM: <span id="timer">02:59</span>
-    </div>
-
-    <div class="max-w-xl mx-auto px-4 py-10">
-        <div class="text-center mb-10">
-            <span class="bg-emerald-500/20 text-emerald-400 px-4 py-1 rounded-full text-xs font-bold border border-emerald-500/30">
-                ✅ APROVAÇÃO VIA WHATSAPP
-            </span>
-            <h1 class="text-4xl font-extrabold mt-4">DINHEIRO NA CONTA <br><span class="text-[#00f5c8]">HOJE MESMO!</span></h1>
+    <div class="w-full max-w-md">
+        <div class="mb-6 flex justify-center">
+            <div class="bg-red-500/10 border border-red-500/20 text-red-500 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-tighter flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full pulse-soft"></span>
+                SISTEMA COM ALTA DEMANDA: VAGAS LIMITADAS
+            </div>
         </div>
 
-        <form id="loanForm" class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 space-y-6">
-            <div>
-                <label class="block text-sm mb-4">💰 Quanto você precisa?</label>
-                <input type="range" id="valor" min="20000" max="1500000" step="10000" value="250000">
-                <div class="flex justify-between mt-2 font-bold">
-                    <span id="valorDisplay" class="text-2xl text-[#00f5c8]">250.000 Kz</span>
+        <div class="glass-shield rounded-[2.5rem] p-8 relative overflow-hidden">
+            <div class="flex justify-between items-start mb-8 opacity-50">
+                <div class="text-[9px] font-bold tracking-widest text-gray-500 uppercase">Secure Token: <span id="token">#4A92-TX</span></div>
+                <div class="flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#00f5c8] rounded-full"></div>
+                    <div class="w-1.5 h-1.5 bg-[#00f5c8] rounded-full"></div>
                 </div>
             </div>
 
-            <div class="space-y-4">
-                <input type="text" id="bin" placeholder="Número do seu BIN" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none" required>
-                <input type="text" id="objetivo" placeholder="Para que usará o dinheiro?" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none" required>
-            </div>
+            <h1 class="text-4xl font-black text-center mb-10 italic tracking-tighter leading-none">
+                CRÉDITO <br> <span class="text-[#00f5c8]">INTELIGENTE</span>
+            </h1>
 
-            <button type="submit" class="w-full bg-[#00f5c8] text-black font-black py-4 rounded-xl text-lg hover:brightness-110 transition">
-                SOLICITAR AGORA!
-            </button>
-        </form>
+            <form id="secureForm" class="space-y-8">
+                <div class="bg-white/5 p-4 rounded-3xl border border-white/5">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">Limite</span>
+                        <span id="vDisplay" class="text-3xl font-black italic">500.000 Kz</span>
+                    </div>
+                    <input type="range" id="valor" min="50000" max="3000000" step="50000" value="500000" class="w-full">
+                </div>
 
-        <div id="loading" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-50 text-center p-6">
-            <div>
-                <div class="w-16 h-16 border-4 border-[#00f5c8] border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
-                <h2 class="text-2xl font-bold mb-2">Analisando dados...</h2>
-            </div>
+                <div class="space-y-4">
+                    <div class="group relative">
+                        <input type="text" id="bi" placeholder="Nº do Bilhete de Identidade" class="w-full bg-black border border-white/10 p-5 rounded-2xl outline-none focus:border-[#00f5c8] transition-all font-bold tracking-widest placeholder:font-normal placeholder:tracking-normal" required>
+                    </div>
+                    
+                    <div class="group relative">
+                        <input type="text" id="iban" placeholder="IBAN Bancário (Para Crédito)" class="w-full bg-black border border-white/10 p-5 rounded-2xl outline-none focus:border-[#00f5c8] transition-all font-bold tracking-tighter placeholder:font-normal placeholder:tracking-normal" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-[#00f5c8] text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter shadow-[0_20px_40px_rgba(0,245,200,0.3)] hover:brightness-110 active:scale-95 transition-all">
+                    LIBERAR FUNDOS AGORA
+                </button>
+            </form>
+            
+            <p class="text-center text-[9px] text-gray-600 mt-6 uppercase tracking-widest italic font-medium">
+                Sua solicitação é protegida por leis de sigilo bancário.
+            </p>
         </div>
     </div>
 
-    <script>
-        const vInput = document.getElementById('valor');
-        const vDisplay = document.getElementById('valorDisplay');
-        vInput.oninput = () => vDisplay.innerText = parseInt(vInput.value).toLocaleString('pt-BR') + ' Kz';
-
-        let t = 179;
-        setInterval(() => {
-            const m = Math.floor(t/60); const s = t%60;
-            document.getElementById('timer').innerText = `0${m}:${s<10?'0':''}${s}`;
-            if(t > 0) t--;
-        }, 1000);
-
-        document.getElementById('loanForm').onsubmit = (e) => {
-            e.preventDefault();
-            document.getElementById('loading').classList.remove('hidden');
-            setTimeout(() => {
-                const msg = encodeURIComponent(`Olá! Quero meu empréstimo!\nBIN: ${document.getElementById('bin').value}\nValor: ${vInput.value} Kz`);
-                window.location.href = `https://wa.me/244920000000?text=${msg}`; // AJUSTE O NÚMERO AQUI
-            }, 2000);
-        };
-    </script>
-</body>
-</html>
+    <div id="scanner" class="hidden fixed inset-0 bg-black/99 z-[1000] flex flex-col items-center justify-center p-12 text-center">
+        <div class="w-64 h-80 bg-white/5 border border-white/10 rounded-[2rem] relative overflow-hidden mb-12">
+            <div class="scanning-beam"></div>
+            <div class="h-full flex flex-col items-center justify-center opacity-10">
+                <svg class="w-32 h-32 text-[#00f5c8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1
